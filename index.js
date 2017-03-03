@@ -21,12 +21,16 @@ var handlers = {
     },
     'RollDice': function () {
         var dieType = this.event.request.intent.slots.Dice.value;
-        var roll = Math.floor((Math.random() * 12) + 1);
+        var die = staticValues.diceArray[dieType];
+
+
+        var roll = Math.floor(Math.random() * die.sides + 1);
+        var face = die.faces[roll];
 
         // Create speech output
-        var speechOutput = "On the " + dieType + " die, you rolled: " + roll;
+        var speechOutput = "On the " + dieType + " die, you rolled: " + face;
 
-        this.emit(':tellWithCard', speechOutput, SKILL_NAME, roll);
+        this.emit(':tellWithCard', speechOutput, SKILL_NAME, face);
     },
     'AMAZON.HelpIntent': function () {
         var speechOutput = "You can say tell me a space fact, or, you can say exit... What can I help you with?";
