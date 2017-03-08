@@ -1,0 +1,55 @@
+{
+  "intents": [
+    {
+      "intent": "RollIntent",
+      "slots": [
+        {
+          "name":"Dice",
+          "type": "DICE"
+        },
+        {
+          "name":"Placeholder",
+          "type": "PLACEHOLDER"
+        },
+        {
+          "name":"NumberTwo",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name":"NumberThree",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name":"NumberFour",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name":"NumberFive",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name":"NumberSix",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name":"NumberSeven",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name":"NumberOne",
+          "type": "AMAZON.NUMBER",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

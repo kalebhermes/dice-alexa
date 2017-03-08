@@ -1,0 +1,7 @@
+RollIntent roll {NumberOne} {Dice} {Placeholder}
+RollIntent roll {NumberOne} {Dice} {Placeholder} {NumberTwo} {Dice} {Placeholder}
+RollIntent roll {NumberOne} {Dice} {Placeholder} {NumberTwo} {Dice} {Placeholder} {NumberThree} {Dice} {Placeholder}
+RollIntent roll {NumberOne} {Dice} {Placeholder} {NumberTwo} {Dice} {Placeholder} {NumberThree} {Dice} {Placeholder} {NumberFour} {Dice} {Placeholder}
+RollIntent roll {NumberOne} {Dice} {Placeholder} {NumberTwo} {Dice} {Placeholder} {NumberThree} {Dice} {Placeholder} {NumberFour} {Dice} {Placeholder} {NumberFive} {Dice} {Placeholder}
+RollIntent roll {NumberOne} {Dice} {Placeholder} {NumberTwo} {Dice} {Placeholder} {NumberThree} {Dice} {Placeholder} {NumberFour} {Dice} {Placeholder} {NumberFive} {Dice} {Placeholder} {NumberSix} {Dice} {Placeholder}
+RollIntent roll {NumberOne} {Dice} {Placeholder} {NumberTwo} {Dice} {Placeholder} {NumberThree} {Dice} {Placeholder} {NumberFour} {Dice} {Placeholder} {NumberFive} {Dice} {Placeholder} {NumberSix} {Dice} {Placeholder} {NumberSeven} {Dice} {Placeholder}

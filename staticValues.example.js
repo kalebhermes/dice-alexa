@@ -1,6 +1,16 @@
 module.exports = {
 	"APP_ID":"amzn1.ask.skill.xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
+	"numberArray": {
+		"NumberOne": 1,
+		"NumberTwo": 2,
+		"NumberThree": 3,
+		"NumberFour": 4,
+		"NumberFive": 5,
+		"NumberSix": 6,
+		"NumberSeven": 7
+	},
+
 	"diceArray" : {
 	'ability': {
 	  'sides':8,

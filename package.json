@@ -1,0 +1,29 @@
+{
+  "name": "swdice-alexa",
+  "version": "1.0.0",
+  "description": "Roll Fantasy Flight Game's Star Wars Dice using Alexa",
+  "main": "index.js",
+  "dependencies": {
+    "alexa-sdk": "^1.0.7",
+    "aws-sdk": "^2.24.0",
+    "jmespath": "^0.15.0",
+    "lodash": "^4.17.4",
+    "sax": "^1.2.2",
+    "xml2js": "^0.4.17",
+    "xmlbuilder": "^8.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "N/A"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalebhermes/swdice-alexa.git"
+  },
+  "author": "Kaleb Hermes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kalebhermes/swdice-alexa/issues"
+  },
+  "homepage": "https://github.com/kalebhermes/swdice-alexa#readme"
+}
