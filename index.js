@@ -32,21 +32,22 @@ var handlers = {
         var slots = this.event.request.intent.slots;
         var listOfDice = slots.Dice.value.split(' ');
         delete slots.Dice;
-        delete slots.Placeholder;
 
         var arrayOfNumbers = [];
         var speechOutput = 'You rolled ';
 
         for(var number in slots){
+            if(isNaN(slots[number].value)){
+                this.emit(':tell', 'There was an error in your question. Did you have a request that was too long? Please try again.');
+            }
             if(slots[number].value){
-                // arrayOfNumbers.push(slots[number].value);
                 var value = staticValues.numberArray[slots[number].name];
                 arrayOfNumbers[(value - 1)] = slots[number].value;
             }
         }
 
         if(arrayOfNumbers.length != listOfDice.length){
-            this.emit(':tell', 'There was an error in the length of numbers. Please try again.');
+            this.emit(':tell', 'There was an error in your question. Did you have a request that was too long? Please try again.');
         }
         
         var rolls = new Array(0);
@@ -54,14 +55,9 @@ var handlers = {
         for(var die in listOfDice){
             var values = DiceRoller.rollStarWarsDice(listOfDice[die], arrayOfNumbers[die]);
             rolls = rolls.concat(values);
-            console.log(values);
         }
 
-        console.log(rolls);
-
         var balancedPool = ValueParser.parse(rolls);
-
-        console.log(balancedPool);
 
         speechOutput += balancedPool;
 
@@ -70,7 +66,7 @@ var handlers = {
 
     },
     'AMAZON.HelpIntent': function () {
-        var speechOutput = "You can say tell me a space fact, or, you can say exit... What can I help you with?";
+        var speechOutput = "You can say roll ex why dice, where ex is a whole number and whyy is a type of die. Or, you can say exit... What can I help you with?";
         var reprompt = "What can I help you with?";
         this.emit(':ask', speechOutput, reprompt);
     },
