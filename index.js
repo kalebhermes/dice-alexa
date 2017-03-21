@@ -33,6 +33,9 @@ var handlers = {
         if(!slots.Dice.value){
             this.emit(':tell', 'There was an error in your question. Please specify what kind of die you want to roll. For example, boost or force. Please try again.');
         }
+        if(!(slots.Dice.value in staticValues.diceArray)){
+            this.emit(':tell', 'There was an error in your question. Please specify what kind of die you want to roll. For example, boost or force. Please try again.');
+        }
         var listOfDice = slots.Dice.value.split(' ');
         delete slots.Dice;
 
