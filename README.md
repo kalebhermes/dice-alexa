@@ -1,1 +1,1 @@
-# swdice-alexa
+# dice-alexa

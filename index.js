@@ -5,7 +5,7 @@ var ValueParser = require("./valueParser.js");
 var DiceRoller = require("./diceRoller.js");
 
 var APP_ID = staticValues.APP_ID;
-var SKILL_NAME = 'Dice Test';
+var SKILL_NAME = 'Game Dice Roller';
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
@@ -31,10 +31,10 @@ var handlers = {
     'RollDice': function () {
         var slots = this.event.request.intent.slots;
         if(!slots.Dice.value){
-            this.emit(':tell', 'There was an error in your question. Please specify what kind of die you want to roll. For example, boost or force. Please try again.');
+            this.emit(':tell', 'There was an error in your question. Please specify what kind of die you want to roll. For example, twenty or six. Please try again.');
         }
-        if(!(slots.Dice.value in staticValues.diceArray)){
-            this.emit(':tell', 'There was an error in your question. Please specify what kind of die you want to roll. For example, boost or force. Please try again.');
+        if(isNaN(slots.Dice.value)){
+            this.emit(':tell', 'There was an error in your question. Please specify what kind of die you want to roll. For example, twenty or six. Please try again.');
         }
         var listOfDice = slots.Dice.value.split(' ');
         delete slots.Dice;
@@ -60,12 +60,10 @@ var handlers = {
 
         for(var die in listOfDice){
             var values = DiceRoller.rollStarWarsDice(listOfDice[die], arrayOfNumbers[die]);
-            rolls = rolls.concat(values);
+            rolls += values;
         }
 
-        var balancedPool = ValueParser.parse(rolls);
-
-        speechOutput += balancedPool;
+        speechOutput += rolls;
 
 
         this.emit(':tellWithCard', speechOutput, SKILL_NAME);
